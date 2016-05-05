@@ -16,7 +16,7 @@ public class server_test {
         WebDriver driver = new FirefoxDriver();
         driver.get("http://localhost:3000");
         LOGGER.info("Driver found site");
-        Assert.assertTrue("Could not find element", driver.findElement(By.className("commentAuthor")).isDisplayed());
+        Assert.assertEquals("Could not find element", driver.getCurrentUrl(), "http://localhost:3000/");
 
         driver.quit();
     }
