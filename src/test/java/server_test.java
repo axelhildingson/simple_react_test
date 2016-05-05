@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -17,8 +18,8 @@ public class server_test {
         LOGGER.info("Driver found site");
         Assert.assertEquals("Could not find element", driver.getCurrentUrl(), "http://localhost:3000/");
         System.out.println(driver.getTitle());
-        Assert.assertEquals("Could not find element",driver.getTitle(), "React Tutorial");
-
+        Assert.assertEquals("Could not find title",driver.getTitle(), "React Tutorial");
+        Assert.assertEquals("Could not find element" ,"Pete Hunt" ,driver.findElement(By.cssSelector(".commentAuthor")).getText());
         driver.quit();
     }
 }
