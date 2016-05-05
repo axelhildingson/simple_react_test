@@ -17,7 +17,8 @@ public class server_test {
         driver.get("http://localhost:3000");
         LOGGER.info("Driver found site");
         Assert.assertEquals("Could not find element", driver.getCurrentUrl(), "http://localhost:3000/");
-        Assert.assertTrue("Could not find element", driver.findElement(By.cssSelector(".commentBox>h1")).isDisplayed());
+        System.out.println(driver.getTitle());
+        Assert.assertEquals("Could not find element",driver.getTitle(), "React Tutorial");
 
         driver.quit();
     }
